@@ -1,3 +1,5 @@
+import cn.edu.tsinghua.cs.dbgroup.gtreeJNI.*;
+
 public class app {
   static {
     try { System.loadLibrary("gtree"); }
@@ -12,12 +14,12 @@ public class app {
   public static void main(String argv[]) {
 
     t0 = System.currentTimeMillis();
-    gtree.load("cd1.gtree");
+    gtreeJNI.load("cd1.gtree");
     t1 = System.currentTimeMillis();
     System.out.println("Load Gtree: "+(t1 - t0)+" ms");
 
     t0 = System.currentTimeMillis();
-    G_Tree gt = gtree.get();
+    G_Tree gt = gtreeJNI.get();
     t1 = System.currentTimeMillis();
     System.out.println("Get Gtree: "+(t1 - t0)+" ms");
 

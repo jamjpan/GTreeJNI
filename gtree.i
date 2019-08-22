@@ -1,4 +1,4 @@
-%module gtree
+%module gtreeJNI
 
 %include "std_string.i"
 %include "std_vector.i"
