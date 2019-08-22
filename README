@@ -1,0 +1,20 @@
+The gtree.h/gtree.cc here has been modified so that it can be transformed by
+SWIG. The mutex was taken out, and the cmp member of Matrix was moved out of
+Matrix and copied into the methods where it was used to work around SWIGging
+the () operator.
+
+To use the SWIG-ified gtree, Java needs the "proxy" classes in jni-bridge
+and the C++ library, libgtree.so. Check the Makefile for how to build these
+classes and the library.
+
+In run.sh, you will find the flag -Djava.library.path=.  This indicates to the
+JVM to look in the current location for any libraries. The "System.loadLibrary"
+call in app.java declares which library to load.
+
+You will also find -cp.:jni-bridge, indicating to look in jni-bridge/ folder
+for external classes. This flag lets the JVM be able to find the proxy classes.
+
+The global methods in gtree.cc (e.g. load, get) can be accessed by using the
+module name. For example, line 15 of app.java calls gtree.load to call the
+global load method.
+
