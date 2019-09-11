@@ -1,4 +1,4 @@
-import cn.edu.tsinghua.cs.dbgroup.gtreeJNI.*;
+import com.github.jargors.gtreeJNI.*;
 
 public class app {
   static {
