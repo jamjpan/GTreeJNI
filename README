@@ -4,8 +4,8 @@ Matrix and copied into the methods where it was used to work around SWIGging
 the () operator.
 
 To use the SWIG-ified gtree, Java needs the "proxy" classes in
-`cn/edu/tsinghua/cs/dbgroup/gtreeJNI` and the C++ library, libgtree.so. Check
-the Makefile for how to build these classes and the library.
+`com/github/jargors/gtreeJNI` and the C++ library, libgtree.so. Check the
+Makefile for how to build these classes and the library.
 
 In run.sh, you will find the flag -Djava.library.path=.  This indicates to the
 JVM to look in the current location for any libraries. The "System.loadLibrary"
