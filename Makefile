@@ -1,5 +1,3 @@
-JAVA_HOME=/home/jpan/local/source/jdk-11.0.1
-
 app: libgtree.so app.java
 	javac -d . java/*.java app.java
 

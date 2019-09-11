@@ -2,8 +2,9 @@ import com.github.jargors.gtreeJNI.*;
 
 public class app {
   static {
-    try { System.loadLibrary("gtree"); }
-    catch (UnsatisfiedLinkError e) {
+    try {
+      System.loadLibrary("gtree");
+    } catch (UnsatisfiedLinkError e) {
       System.err.println("Native code library failed to load: "+e);
       System.exit(1);
     }
@@ -14,7 +15,7 @@ public class app {
   public static void main(String argv[]) {
 
     t0 = System.currentTimeMillis();
-    gtreeJNI.load("cd1.gtree");
+    gtreeJNI.load(argv[0]);
     t1 = System.currentTimeMillis();
     System.out.println("Load Gtree: "+(t1 - t0)+" ms");
 
@@ -30,8 +31,9 @@ public class app {
     System.out.println("Gtree.find_path: "+(t1 - t0)+" ms");
 
     System.out.print("82 ~> 88:");
-    for (Integer v : route)
+    for (Integer v : route) {
       System.out.print(" "+v);
+    }
     System.out.print("\n");
   }
 }
