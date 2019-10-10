@@ -1,2 +1,5 @@
-cd1.gtree
-gtreeJNI-*.tar
+app.class
+gtree_wrap.cc
+libgtree.so
+com/
+java/
