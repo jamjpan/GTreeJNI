@@ -3,3 +3,4 @@ gtree_wrap.cc
 libgtree.so
 com/
 java/
+*.jar
