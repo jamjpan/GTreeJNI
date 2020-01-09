@@ -1,25 +1,17 @@
-# GTreeJNI
-# - Set CLASSPATH environmental variable before running `make`.
-# - Command `make clean` does NOT remove the compressed jar from $CLASSPATH/.
-#   Do that manually.
-WIDGET=GTreeJNI
-VERSION=1.0.0
+# Java gtree
 
-.PHONY : all clean
+.PHONY :  clean
 
-all : app jar
-
-app : lib app.java
-	javac -Xlint:deprecation -d . -cp .:./* app.java
-
-jar : lib
+jargors-gtree-1.0.0.jar : lib
 	javac -Xlint:deprecation -d . java/*.java
-	jar cvf jargors-$(WIDGET)-$(VERSION).jar com libgtree.so
+	jar cvf $@ com
 
-lib : gtree.h gtree.cc gtree.i
+lib : cc/libgtree.h libgtree.i
 	mkdir -p java
-	swig -c++ -java -package com.github.jargors.gtreeJNI -outdir java -cppext cc gtree.i
-	g++ -fPIC -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux -shared -o libgtree.so gtree_wrap.cc gtree.cc
+	swig -c++ -java -package com.github.jargors.gtree -outdir java -cppext cc libgtree.i
+	g++ -fPIC -c libgtree_wrap.cc -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux -lmetis -o libgtree.o
+	g++ -shared -o libgtree.so libgtree.o -Wl,-rpath,$(LD_LIBRARY_PATH) -lmetis
 
 clean :
-	rm -rf gtree_wrap.cc libgtree.so app.class com/ java/
+	rm -rf libgtree_wrap.cc libgtree.so libgtree.o java/ com/
+

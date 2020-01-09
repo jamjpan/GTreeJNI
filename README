@@ -1,17 +1,12 @@
-The gtree.h/gtree.cc here has been modified so that it can be transformed by
-SWIG. The mutex was taken out, and the cmp member of Matrix was moved out of
-Matrix and copied into the methods where it was used to work around SWIGging
-the () operator.
+This directory contains the SWIG interface file and Makefile commands to build
+Java classes and native binary that wrap and provide libgtree functionality. A
+header-only version of the libgtree library is provided in cc/ directory. For
+the author version see https://github.com/wangyong01/GTree
 
-To use the SWIG-ified gtree, Java needs the "proxy" classes in
-`com/github/jargors/gtreeJNI` and the C++ library, libgtree.so. Check the
-Makefile for how to build these classes and the library.
+To build the binary library, type `make lib`. To build the Java classes as a
+Java archive (jar), type `make jar`. To build everything, type `make`. You
+need to have METIS installed in your LD_LIBRARY_PATH for the build to succeed.
 
-In run.sh, you will find the flag -Djava.library.path=.  This indicates to the
-JVM to look in the current location for any libraries. The "System.loadLibrary"
-call in app.java declares which library to load.
-
-The global methods in gtree.cc (e.g. load, get) can be accessed by using the
-module name. For example, line 17 of app.java calls gtreeJNI.load to call the
-global load method.
+These commands were tested against Java 11.0.01 and SWIG Version 4.0.1 on
+Fedora 27, see http://www.swig.org for more information.
 
