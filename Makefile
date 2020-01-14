@@ -2,7 +2,7 @@
 
 .PHONY :  clean
 
-gtree-1.0.0.jar : lib
+gtree-2.0.jar : lib
 	javac -Xlint:deprecation -d . java/*.java
 	jar cvf $@ com
 
