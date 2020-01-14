@@ -1,6 +1,6 @@
-import com.github.jargors.gtree.GTree;
-import com.github.jargors.gtree.gtreeJNI;
-import com.github.jargors.gtree.IntVector;
+import com.github.jamjpan.gtree.GTree;
+import com.github.jamjpan.gtree.gtreeJNI;
+import com.github.jamjpan.gtree.IntVector;
 
 public class GtreeQuery {
   static final Integer REQUIRED_ARGS = 3;

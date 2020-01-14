@@ -1,5 +1,5 @@
-import com.github.jargors.gtree.GTree;
-import com.github.jargors.gtree.gtreeJNI;
+import com.github.jamjpan.gtree.GTree;
+import com.github.jamjpan.gtree.gtreeJNI;
 
 public class GtreeBuild {
   static final Integer REQUIRED_ARGS = 1;
