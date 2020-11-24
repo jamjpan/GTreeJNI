@@ -25,17 +25,17 @@ succeed. The METIS graph partitioning library can be obtained from
 will also need SWIG. The SWIG executable can usually be obtained via
 package manager. For example for Debian, the command is `sudo apt
 install swig`. Consult [swig.org](http://www.swig.org) for more
-details.
+installation instructions.
 
 To build and package the Java classes, type `make jar`. To build
 everything all at once, just type `make`.
 
 ## Usage
 
-The `test/` directory contains two small programs, `GtreeBuild` and
-`GtreeQuery`.  To use `GtreeBuild`, first obtain a road network file
-that contains edges and weights. As an example, Wang provides the
-California road network
+The `test/` directory contains two small programs to demonstrate the
+usage, `GtreeBuild` and `GtreeQuery`.  To use `GtreeBuild`, first
+obtain a road network file that contains edges and weights. As an
+example, Wang provides the California road network
 [here](https://github.com/wangyong01/GTree/blob/master/GraphTree/data/CAL.gr).
 Then use the helper script `GtreeBuild.sh` to launch the program.
 When using `GtreeBuild`, make sure to set the `-I` option to indicate
