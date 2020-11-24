@@ -1,5 +1,5 @@
-import com.github.jamjpan.gtree.GTree;
-import com.github.jamjpan.gtree.gtreeJNI;
+import com.jargors.libgtree_jni.GTree;
+import com.jargors.libgtree_jni.gtreeJNI;
 
 public class GtreeBuild {
   static final Integer REQUIRED_ARGS = 1;
@@ -35,12 +35,13 @@ public class GtreeBuild {
 
       // Optional arguments
       int i = 0;
-      while (++i < j) {
-        if (argv[i] == "-o") {
-          opt_o = argv[(i + 1)];
-        } else if (argv[i] == "-I") {
-          opt_I = Integer.parseInt(argv[(i + 1)]);
-        }
+      while (i < j) {
+      	  if (argv[i].equals("-o")) {
+	      opt_o = argv[(i + 1)];
+      	  } else if (argv[i].equals("-I")) {
+	      opt_I = Integer.parseInt(argv[(i + 1)]);
+	  }
+	  i++;
       }
 
       // Launch app
