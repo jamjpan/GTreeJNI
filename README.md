@@ -1,45 +1,45 @@
 # libgtree_jni
 
-Last Updated: <2020-11-24>
+Last Updated: <2020-11-26>
 
-This repository contains the SWIG interface `libgtree.i` and Makefile
-commands to build the Java classes and native binary that provide
-g-tree for Java programs. G-tree is an index for connected graphs that
-can be used to quickly compute shortest paths in a road network. See
-the publication for more details:
+This repository contains the SWIG interface `libgtree_jni.i` and Makefile
+commands to build the Java classes and native binary that provide g-tree for
+Java programs. G-tree is an index for connected graphs that can be used to
+quickly compute shortest paths in a road network. See the publication for more
+details:
 
 > Ruicheng Zhong, Guoliang Li, Kian-Lee Tan, Lizhu Zhou, Zhiguo Gong: G-Tree: An Efficient and Scalable Index for Spatial Search on Road Networks. IEEE Trans. Knowl. Data Eng. 27(8): 2175-2189 (2015)
 
-The `cc/` directory contains a header-only version of g-tree that is
-based on the improvements written by Wang Yong, located at
-[wangyong01/GTree](https://github.com/wangyong01/GTree). The original
-g-tree was written by Ruicheng Zhong and is located at
+The `cc/` directory contains a header-only version of g-tree that is based on
+the improvements written by Yong Wang, located at
+[wangyong01/GTree](https://github.com/wangyong01/GTree). The original g-tree
+was written by Ruicheng Zhong and is located at
 [TsinghuaDatabaseGroup/GTree](https://github.com/TsinghuaDatabaseGroup/GTree).
 
 ## Build
 
-Type `make lib` from this directory to build the binary. You will need
-METIS installed in your `LD_LIBRARY_PATH` for the build to
-succeed. The METIS graph partitioning library can be obtained from
-[here](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview). You
-will also need SWIG. The SWIG executable can usually be obtained via
-package manager. For example for Debian, the command is `sudo apt
-install swig`. Consult [swig.org](http://www.swig.org) for more
-installation instructions.
+Type `make lib` from this directory to build the binary. You will need METIS
+installed in your `LD_LIBRARY_PATH` for the build to succeed. The METIS graph
+partitioning library can be obtained from
+[here](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview). You will also
+need SWIG. The SWIG executable can usually be obtained via package manager. For
+example for Debian, the command to obtain it is `sudo apt install swig`.
+Consult [swig.org](http://www.swig.org) for additional installation
+instructions.
 
 To build and package the Java classes, type `make jar`. To build
 everything all at once, just type `make`.
 
 ## Usage
 
-The `test/` directory contains two small programs to demonstrate the
-usage, `GtreeBuild` and `GtreeQuery`.  To use `GtreeBuild`, first
-obtain a road network file that contains edges and weights. As an
-example, Wang provides the California road network
+The `test/` directory contains two small programs to demonstrate the usage,
+`GtreeBuild` and `GtreeQuery`.  To use `GtreeBuild`, first obtain a road
+network file that contains edges and weights. As an example, Yong provides the
+California road network
 [here](https://github.com/wangyong01/GTree/blob/master/GraphTree/data/CAL.gr).
-Then use the helper script `GtreeBuild.sh` to launch the program.
-When using `GtreeBuild`, make sure to set the `-I` option to indicate
-whether the vertices start from 0 (`-I 0`) or start from 1 (`-I 1`).
+Then use the helper script `GtreeBuild.sh` to launch the program.  When using
+`GtreeBuild`, make sure to set the `-I` option to indicate whether the vertices
+start from 0 (`-I 0`) or start from 1 (`-I 1`).
 
 Sample output:
 ```
