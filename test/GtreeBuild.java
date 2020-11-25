@@ -1,5 +1,5 @@
-import com.jargors.libgtree_jni.GTree;
-import com.jargors.libgtree_jni.gtreeJNI;
+import com.github.jamjpan.libgtree_jni.GTree;
+import com.github.jamjpan.libgtree_jni.gtreeJNI;
 
 public class GtreeBuild {
   static final Integer REQUIRED_ARGS = 1;
@@ -8,7 +8,7 @@ public class GtreeBuild {
   static Integer opt_I = 0;  // 0-indexed or 1-indexed
   static {
     try {
-      System.loadLibrary("gtree");
+      System.loadLibrary("gtree_jni");
     } catch (UnsatisfiedLinkError e) {
       System.err.println("Native code library failed to load: "+e);
       System.exit(1);

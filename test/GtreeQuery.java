@@ -1,6 +1,6 @@
-import com.jargors.libgtree_jni.GTree;
-import com.jargors.libgtree_jni.gtreeJNI;
-import com.jargors.libgtree_jni.IntVector;
+import com.github.jamjpan.libgtree_jni.GTree;
+import com.github.jamjpan.libgtree_jni.gtreeJNI;
+import com.github.jamjpan.libgtree_jni.IntVector;
 
 public class GtreeQuery {
   static final Integer REQUIRED_ARGS = 3;
@@ -9,7 +9,7 @@ public class GtreeQuery {
   static Integer arg3 = -1;  // to vertex
   static {
     try {
-      System.loadLibrary("gtree");
+      System.loadLibrary("gtree_jni");
     } catch (UnsatisfiedLinkError e) {
       System.err.println("Native code library failed to load: "+e);
       System.exit(1);
