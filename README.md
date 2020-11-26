@@ -19,7 +19,7 @@ was written by Ruicheng Zhong and is located at
 ## Download
 
 A Linux amd64 release is
-[available](https://github.com/jamjpan/libgtree_jni/releases).  This
+[available](https://github.com/jamjpan/libgtree_jni_native/releases).  This
 release includes the compiled Java classes and g-tree binary. For
 other platforms, see the build instructions below.
 
@@ -37,8 +37,11 @@ For example for Debian, the command to obtain it is `sudo apt install swig`.
 Consult [swig.org](http://www.swig.org) for additional installation
 instructions.
 
-To build and package the Java classes, type `make jar`. To build
-everything all at once, just type `make`.
+To build and package the Java classes, type `make jar`. Alternatively use
+Maven. See [here](https://github.com/jamjpan/libgtree_jni) for the Maven
+artifact.
+
+To build everything all at once, just type `make`.
 
 ## Install
 
