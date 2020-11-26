@@ -29,16 +29,21 @@ build to be included in the release, please let me know!
 ## Build
 
 Type `make lib` from this directory to build the binary. You will need METIS
-installed in your `LD_LIBRARY_PATH` for the build to succeed. The METIS graph
-partitioning library can be obtained from
+installed in your g++ `LIBRARY_PATH` (e.g. `/usr/local/lib`) for the build to
+succeed. The METIS graph partitioning library can be obtained from
 [here](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview). You will also
-need SWIG. The SWIG executable can usually be obtained via package manager. For
-example for Debian, the command to obtain it is `sudo apt install swig`.
+need SWIG. The SWIG executable can usually be obtained via package manager.
+For example for Debian, the command to obtain it is `sudo apt install swig`.
 Consult [swig.org](http://www.swig.org) for additional installation
 instructions.
 
 To build and package the Java classes, type `make jar`. To build
 everything all at once, just type `make`.
+
+## Install
+
+Put the compiled jar into your Java classpath (e.g. current working directory)
+and the compiled JNI binary into your Java library path (e.g. `/usr/lib`).
 
 ## Usage
 
