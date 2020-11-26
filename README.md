@@ -16,6 +16,16 @@ the improvements written by Yong Wang, located at
 was written by Ruicheng Zhong and is located at
 [TsinghuaDatabaseGroup/GTree](https://github.com/TsinghuaDatabaseGroup/GTree).
 
+## Download
+
+A Linux amd64 release is
+[available](https://github.com/jamjpan/libgtree_jni/releases).  This
+release includes the compiled Java classes and g-tree binary. For
+other platforms, see the build instructions below.
+
+If you are feeling generous and want to donate your platform-specific
+build to be included in the release, please let me know!
+
 ## Build
 
 Type `make lib` from this directory to build the binary. You will need METIS
